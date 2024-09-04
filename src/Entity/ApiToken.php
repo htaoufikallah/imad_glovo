@@ -16,6 +16,7 @@ class ApiToken
     public const SCOPE_MENU_CREATE = 'ROLE_RESTAURANT_OWNER_MENU_CREATE';
     public const SCOPE_MENU_EDIT = 'ROLE_RESTAURANT_OWNER_MENU_EDIT';
     public const SCOPE_MENU_DELETE = 'ROLE_RESTAURANT_OWNER_MENU_DELETE';
+    public const SCOPE_ORDER_CREATE = 'ROLE_CLIENT';
 
 
     public const SCOPES = [
@@ -25,6 +26,7 @@ class ApiToken
         self::SCOPE_MENU_CREATE => 'Create Menus',
         self::SCOPE_MENU_EDIT => 'Edit Menus',
         self::SCOPE_MENU_DELETE => 'Delete Menus',
+        self::SCOPE_ORDER_CREATE => 'Create Orders',
     ];
 
     #[ORM\Id]

@@ -2,22 +2,21 @@
 
 namespace App\Security\Voter;
 
-use App\Entity\Menu;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class MenuApiVoter extends Voter
+class OrderApiVoter extends Voter
 {
-    public const EDIT = 'EDIT';
-
+    public const EDIT = 'POST_EDIT';
+    public const VIEW = 'POST_VIEW';
 
     protected function supports(string $attribute, mixed $subject): bool
     {
         // replace with your own logic
         // https://symfony.com/doc/current/security/voters.html
-        return in_array($attribute, [self::EDIT])
-            && $subject instanceof Menu;
+        return in_array($attribute, [self::EDIT, self::VIEW])
+            && $subject instanceof \App\Entity\OrderApi;
     }
 
     protected function voteOnAttribute(string $attribute, mixed $subject, TokenInterface $token): bool
@@ -34,10 +33,10 @@ class MenuApiVoter extends Voter
                 // logic to determine if the user can EDIT
                 // return true or false
                 break;
-//            case self::VIEW:
-//                // logic to determine if the user can VIEW
-//                // return true or false
-//                break;
+            case self::VIEW:
+                // logic to determine if the user can VIEW
+                // return true or false
+                break;
         }
 
         return false;
