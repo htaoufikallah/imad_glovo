@@ -8,7 +8,10 @@ api_platform:
     swagger:
         api_keys:
             # overridden in OpenApiFactoryDecorator
-            access_token:
+#            access_token:
+#                name: Authorization
+#                type: header
+            JWT:
                 name: Authorization
                 type: header
 

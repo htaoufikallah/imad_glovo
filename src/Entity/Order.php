@@ -23,7 +23,7 @@ class Order
     #[Assert\NotBlank]
     private ?string $clientName = null;
 
-    #[ORM\Column(type: 'DateTimeImmutable')]
+    #[ORM\Column(type: 'datetime_immutable')]
     #[Assert\NotNull]
     private ?\DateTimeImmutable $orderDate = null;
 
